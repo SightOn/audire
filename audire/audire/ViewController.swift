@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //コマンド検出 ダブルタップホールドに変える？
+    //ジェスチャ入力用のコマンド検出 ダブルタップホールドに変える？
     @objc func longTap(_ sender: UIGestureRecognizer){
         print("Long tap")
         if sender.state == .ended {
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func showInstantAlert() {
+    private func showInstantAlert() {
         // アラート作成
         let alert = UIAlertController(title: "録音画面に移ります", message: "", preferredStyle: .alert)
         // アラートにボタンをつける
@@ -76,14 +76,14 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func getNowMonthDayString() -> String {
+    internal func getNowMonthDayString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM月dd日"
         let now = Date()
         return formatter.string(from: now)
     }
     
-    func getNowDateString() -> String {
+    internal func getNowDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyMMdd_HHmmss"
         let now = Date()

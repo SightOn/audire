@@ -119,8 +119,8 @@ class PostViewController: ViewController {
             saveData()
         }
         let file_name = temp_data.load()
-        database.create(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [""], createDate: Date())
-        database.add()
+        database.CreateData(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [""], createDate: Date())
+        database.Add()
         temp_data.clean()
     }
 

@@ -15,7 +15,6 @@
 		0C3928A61F23727300397EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3928A41F23727300397EDD /* LaunchScreen.storyboard */; };
 		0C3928CA1F2378EA00397EDD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928C91F2378EA00397EDD /* RecordViewController.swift */; };
 		0C3928CC1F23791A00397EDD /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928CB1F23791A00397EDD /* FeedViewController.swift */; };
-		0C3928D01F23794300397EDD /* ManualEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928CF1F23794300397EDD /* ManualEditViewController.swift */; };
 		0C3928D21F23796200397EDD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928D11F23796200397EDD /* PostViewController.swift */; };
 		0C404CD31F389F590080F4EB /* sight_on_splash_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C404CD21F389F590080F4EB /* sight_on_splash_ipad.png */; };
 		0C4BB7011F3DDCF6001CA4A2 /* TemporaryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BB7001F3DDCF6001CA4A2 /* TemporaryDataManager.swift */; };
@@ -42,12 +41,6 @@
 		E61543991F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
 		E615439A1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
 		E615439B1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
-		E615439C1F474E7C007537DA /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543971F474E7C007537DA /* OpenEars.framework */; };
-		E615439D1F474E7C007537DA /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543971F474E7C007537DA /* OpenEars.framework */; };
-		E615439E1F474E7C007537DA /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543971F474E7C007537DA /* OpenEars.framework */; };
-		E615439F1F474E7C007537DA /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543981F474E7C007537DA /* Slt.framework */; };
-		E61543A01F474E7C007537DA /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543981F474E7C007537DA /* Slt.framework */; };
-		E61543A11F474E7C007537DA /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543981F474E7C007537DA /* Slt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +62,6 @@
 
 /* Begin PBXFileReference section */
 		0C13AE621F3D9AFD00C7847F /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		0C20966D1F497BF5003290DE /* OpenEarsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsHeader.h; sourceTree = "<group>"; };
 		0C3928981F23727300397EDD /* audire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C39289B1F23727300397EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C39289D1F23727300397EDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +73,6 @@
 		0C3928B71F23727300397EDD /* audireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C3928C91F2378EA00397EDD /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		0C3928CB1F23791A00397EDD /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		0C3928CF1F23794300397EDD /* ManualEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEditViewController.swift; sourceTree = "<group>"; };
 		0C3928D11F23796200397EDD /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0C404CD21F389F590080F4EB /* sight_on_splash_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_splash_ipad.png; sourceTree = "<group>"; };
 		0C4BB7001F3DDCF6001CA4A2 /* TemporaryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryDataManager.swift; sourceTree = "<group>"; };
@@ -106,8 +97,6 @@
 		0CF2EB6A1F35E391003DD9D2 /* sight_on_icon_dark_mat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_icon_dark_mat.png; sourceTree = "<group>"; };
 		E6069C831F9A4C3700908DE6 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
-		E61543971F474E7C007537DA /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		E61543981F474E7C007537DA /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.release.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.release.xcconfig"; sourceTree = "<group>"; };
 		FDC3FB892F9342E81ED957B7 /* Pods-audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,8 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E615439F1F474E7C007537DA /* Slt.framework in Frameworks */,
-				E615439C1F474E7C007537DA /* OpenEars.framework in Frameworks */,
 				0C978E201F377300003E2232 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,8 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E61543A01F474E7C007537DA /* Slt.framework in Frameworks */,
-				E615439D1F474E7C007537DA /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,8 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E61543A11F474E7C007537DA /* Slt.framework in Frameworks */,
-				E615439E1F474E7C007537DA /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,9 +154,9 @@
 				0C978E181F375F27003E2232 /* Model */,
 				0CF2EB691F35E370003DD9D2 /* Image */,
 				0C4BB70A1F3E8474001CA4A2 /* Common */,
-				0CF2EB641F35DB1B003DD9D2 /* Record */,
-				0CF2EB631F35DAFA003DD9D2 /* Post */,
-				0CF2EB611F35D0E3003DD9D2 /* Feed */,
+				0CF2EB641F35DB1B003DD9D2 /* RecordController */,
+				0CF2EB631F35DAFA003DD9D2 /* PostController */,
+				0CF2EB611F35D0E3003DD9D2 /* FeedController */,
 				0C13AE621F3D9AFD00C7847F /* PageViewController.swift */,
 				0C6DDAD81F91E52600B03CEF /* TabBarController.swift */,
 				0CBC0F1A1FA0FA740026C1C1 /* HelpViewController.swift */,
@@ -222,32 +205,30 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		0CF2EB611F35D0E3003DD9D2 /* Feed */ = {
+		0CF2EB611F35D0E3003DD9D2 /* FeedController */ = {
 			isa = PBXGroup;
 			children = (
 				0C3928CB1F23791A00397EDD /* FeedViewController.swift */,
 				0CF2EB5F1F358603003DD9D2 /* FeedListItemTableViewCell.swift */,
 			);
-			name = Feed;
+			name = FeedController;
 			sourceTree = "<group>";
 		};
-		0CF2EB631F35DAFA003DD9D2 /* Post */ = {
+		0CF2EB631F35DAFA003DD9D2 /* PostController */ = {
 			isa = PBXGroup;
 			children = (
-				0C20966D1F497BF5003290DE /* OpenEarsHeader.h */,
-				0C3928CF1F23794300397EDD /* ManualEditViewController.swift */,
 				0C3928D11F23796200397EDD /* PostViewController.swift */,
 				0C6F78D71FA4BB68008E30A4 /* VoiceTagViewController.swift */,
 			);
-			name = Post;
+			name = PostController;
 			sourceTree = "<group>";
 		};
-		0CF2EB641F35DB1B003DD9D2 /* Record */ = {
+		0CF2EB641F35DB1B003DD9D2 /* RecordController */ = {
 			isa = PBXGroup;
 			children = (
 				0C3928C91F2378EA00397EDD /* RecordViewController.swift */,
 			);
-			name = Record;
+			name = RecordController;
 			sourceTree = "<group>";
 		};
 		0CF2EB691F35E370003DD9D2 /* Image */ = {
@@ -282,8 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */,
-				E61543971F474E7C007537DA /* OpenEars.framework */,
-				E61543981F474E7C007537DA /* Slt.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -489,7 +468,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C3928D01F23794300397EDD /* ManualEditViewController.swift in Sources */,
 				0C13AE631F3D9AFD00C7847F /* PageViewController.swift in Sources */,
 				0C3928CA1F2378EA00397EDD /* RecordViewController.swift in Sources */,
 				0C3928D21F23796200397EDD /* PostViewController.swift in Sources */,

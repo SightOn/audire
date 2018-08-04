@@ -18,19 +18,14 @@ protocol SoundPlayerDelegate: class {
 class SoundPlayer: NSObject, AVAudioPlayerDelegate {
     
     weak var delegate: SoundPlayerDelegate? = nil
-    
     var audioPlayer = AVAudioPlayer()
-    
     var playingUrl:URL?
-    
     var hasInit:Bool!
     
     // OSLog のインスタンスを生成して
     let log = OSLog(subsystem: "jp.classmethod.SampleMobileApp", category: "UI")
     
-    override init()
-    {
-
+    override init(){
     }
     
     public func initPlayer(url: URL)
@@ -102,14 +97,14 @@ class SoundPlayer: NSObject, AVAudioPlayerDelegate {
     }
     
     //再生終了時の呼び出しメソッド
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
+    public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
     {
         self.delegate?.updatePlayBtnsTitle(text: "Finish")
         os_log("finish to play", log: log, type: .default)
     }
     
     // デコード中にエラーが起きた時に呼ばれるメソッド
-    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?)
+    public func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?)
     {
         os_log("decoding error on audioPlayer", log: log, type: .default)
     }

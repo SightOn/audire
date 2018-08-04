@@ -48,7 +48,7 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         realm = try! Realm()
         
         //データの読み出し，更新
-        sounds = database.extractByUserId(1)
+        sounds = database.ExtractByUserId(1)
         soundPlayer = SoundPlayer()
         soundPlayer.delegate = self
         var seleted_url: URL
@@ -63,13 +63,6 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         }
         soundPlayer.initPlayer(url: seleted_url)
         
-        //for sound in sounds
-        //{/
-            //let date = sound.created_stamp
-            //print(date)
-            //if(date) //DBでユニークをとってセクションをつくる？案外面倒
-        //}
-        
         //Now reload the tableView
         self.tableView.reloadData()
         UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self.navigationController?.navigationBar.topItem)
@@ -79,11 +72,11 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         soundPlayer.stop()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //読み込み済みデータ数を返すべき
         if section == 0
         {
@@ -93,7 +86,7 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         return 0
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    internal func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffsetY = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.height
         _ = maximumOffset - currentOffsetY
@@ -112,20 +105,11 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     //セルのデータの読み出し
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListItem") as! FeedListItemTableViewCell
-            
             cell.titleLabel.text = sounds[indexPath.row].sound_name
-            //print(sounds[indexPath.row].sound_name)
-            //print(cell.titleLabel.text as Any )
-//            let tags_text = Array(sounds[indexPath.row].tags).reduce("タグ： ") {
-//                (joined: String, x: Tag) -> String
-//                in return joined + x.tagName + ", "
-//            }
-//            cell.tagLabel.text = "\(tags_text)"
-            
             return cell
         }
         return UITableViewCell()
@@ -204,10 +188,6 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         }
         // 選択を常に解除しておく(解除しないほうが状態がわかりそう)
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        //OSのなどの仕様に依存するので非常に危険
-        //sleep(UInt32(0.9)) //少し経ってから復活させる //1秒超えるとたいてい外れてしまう
-        //cell.titleLabel.accessibilityLabel = "選択中" //cell.titleLabel.text
     }
     
     private func ttsPlaySound()
