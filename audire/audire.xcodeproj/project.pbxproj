@@ -3,312 +3,554 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C92F2DB2115D9470094D4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F2DA2115D9470094D4C8 /* AppDelegate.swift */; };
-		0C92F2DD2115D9470094D4C8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F2DC2115D9470094D4C8 /* FirstViewController.swift */; };
-		0C92F2DF2115D9470094D4C8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F2DE2115D9470094D4C8 /* SecondViewController.swift */; };
-		0C92F2E22115D9470094D4C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92F2E02115D9470094D4C8 /* Main.storyboard */; };
-		0C92F2E42115D9480094D4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C92F2E32115D9480094D4C8 /* Assets.xcassets */; };
-		0C92F2E72115D9480094D4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C92F2E52115D9480094D4C8 /* LaunchScreen.storyboard */; };
-		0C92F2F22115D9490094D4C8 /* audireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F2F12115D9490094D4C8 /* audireTests.swift */; };
-		0C92F2FD2115D9490094D4C8 /* audireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F2FC2115D9490094D4C8 /* audireUITests.swift */; };
+		0C13AE631F3D9AFD00C7847F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C13AE621F3D9AFD00C7847F /* PageViewController.swift */; };
+		0C39289C1F23727300397EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39289B1F23727300397EDD /* AppDelegate.swift */; };
+		0C39289E1F23727300397EDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39289D1F23727300397EDD /* ViewController.swift */; };
+		0C3928A11F23727300397EDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C39289F1F23727300397EDD /* Main.storyboard */; };
+		0C3928A31F23727300397EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3928A21F23727300397EDD /* Assets.xcassets */; };
+		0C3928A61F23727300397EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3928A41F23727300397EDD /* LaunchScreen.storyboard */; };
+		0C3928CA1F2378EA00397EDD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928C91F2378EA00397EDD /* RecordViewController.swift */; };
+		0C3928CC1F23791A00397EDD /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928CB1F23791A00397EDD /* FeedViewController.swift */; };
+		0C3928D01F23794300397EDD /* ManualEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928CF1F23794300397EDD /* ManualEditViewController.swift */; };
+		0C3928D21F23796200397EDD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3928D11F23796200397EDD /* PostViewController.swift */; };
+		0C404CD31F389F590080F4EB /* sight_on_splash_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C404CD21F389F590080F4EB /* sight_on_splash_ipad.png */; };
+		0C4BB7011F3DDCF6001CA4A2 /* TemporaryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BB7001F3DDCF6001CA4A2 /* TemporaryDataManager.swift */; };
+		0C4BB7071F3E8198001CA4A2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BB7061F3E8198001CA4A2 /* User.swift */; };
+		0C4BB7091F3E845A001CA4A2 /* DatabaseAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BB7081F3E845A001CA4A2 /* DatabaseAccessManager.swift */; };
+		0C57DDC91FAE5EDD00C4A7FA /* Places.realm in Resources */ = {isa = PBXBuildFile; fileRef = 0C57DDC81FAE5EDD00C4A7FA /* Places.realm */; };
+		0C6DDAD91F91E52600B03CEF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6DDAD81F91E52600B03CEF /* TabBarController.swift */; };
+		0C6F78D81FA4BB68008E30A4 /* VoiceTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F78D71FA4BB68008E30A4 /* VoiceTagViewController.swift */; };
+		0C6F78DA1FA4C11F008E30A4 /* SoundRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F78D91FA4C11F008E30A4 /* SoundRecorder.swift */; };
+		0C8E85C51F485C7500DF559F /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8E85C41F485C7500DF559F /* SoundPlayer.swift */; };
+		0C978E1A1F375F46003E2232 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C978E191F375F46003E2232 /* Sound.swift */; };
+		0C978E1E1F377269003E2232 /* yurakucho_muzhirusi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0C978E1D1F377269003E2232 /* yurakucho_muzhirusi.m4a */; };
+		0C978E201F377300003E2232 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C978E1F1F377300003E2232 /* AVFoundation.framework */; };
+		0CA1988A1F48A98400E9525A /* akihabara_lunch.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0CA198891F48A98400E9525A /* akihabara_lunch.m4a */; };
+		0CA1988E1F48AEA000E9525A /* on_the_bridge.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0CA1988B1F48AEA000E9525A /* on_the_bridge.m4a */; };
+		0CA1988F1F48AEA000E9525A /* on_stair.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0CA1988C1F48AEA000E9525A /* on_stair.m4a */; };
+		0CA198901F48AEA000E9525A /* ginza_east.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0CA1988D1F48AEA000E9525A /* ginza_east.m4a */; };
+		0CA198961F495E0B00E9525A /* washroom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0CA198951F495E0B00E9525A /* washroom.wav */; };
+		0CBC0F1B1FA0FA740026C1C1 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC0F1A1FA0FA740026C1C1 /* HelpViewController.swift */; };
+		0CF2EB601F358603003DD9D2 /* FeedListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2EB5F1F358603003DD9D2 /* FeedListItemTableViewCell.swift */; };
+		0CF2EB681F35E304003DD9D2 /* sight_on_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF2EB671F35E304003DD9D2 /* sight_on_splash.png */; };
+		0CF2EB6B1F35E391003DD9D2 /* sight_on_icon_dark_mat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF2EB6A1F35E391003DD9D2 /* sight_on_icon_dark_mat.png */; };
+		E6069C841F9A4C3700908DE6 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6069C831F9A4C3700908DE6 /* Post.storyboard */; };
+		E61543991F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
+		E615439A1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
+		E615439B1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
+		E615439C1F474E7C007537DA /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543971F474E7C007537DA /* OpenEars.framework */; };
+		E615439D1F474E7C007537DA /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543971F474E7C007537DA /* OpenEars.framework */; };
+		E615439E1F474E7C007537DA /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543971F474E7C007537DA /* OpenEars.framework */; };
+		E615439F1F474E7C007537DA /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543981F474E7C007537DA /* Slt.framework */; };
+		E61543A01F474E7C007537DA /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543981F474E7C007537DA /* Slt.framework */; };
+		E61543A11F474E7C007537DA /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E61543981F474E7C007537DA /* Slt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0C92F2EE2115D9490094D4C8 /* PBXContainerItemProxy */ = {
+		0C3928AD1F23727300397EDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0C92F2CF2115D9470094D4C8 /* Project object */;
+			containerPortal = 0C3928901F23727300397EDD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0C92F2D62115D9470094D4C8;
-			remoteInfo = audire;
+			remoteGlobalIDString = 0C3928971F23727300397EDD;
+			remoteInfo = SightOnMock;
 		};
-		0C92F2F92115D9490094D4C8 /* PBXContainerItemProxy */ = {
+		0C3928B81F23727300397EDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0C92F2CF2115D9470094D4C8 /* Project object */;
+			containerPortal = 0C3928901F23727300397EDD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0C92F2D62115D9470094D4C8;
-			remoteInfo = audire;
+			remoteGlobalIDString = 0C3928971F23727300397EDD;
+			remoteInfo = SightOnMock;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C92F2D72115D9470094D4C8 /* audire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audire.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C92F2DA2115D9470094D4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0C92F2DC2115D9470094D4C8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		0C92F2DE2115D9470094D4C8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		0C92F2E12115D9470094D4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0C92F2E32115D9480094D4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0C92F2E62115D9480094D4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0C92F2E82115D9480094D4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C92F2ED2115D9490094D4C8 /* audireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C92F2F12115D9490094D4C8 /* audireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audireTests.swift; sourceTree = "<group>"; };
-		0C92F2F32115D9490094D4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C92F2F82115D9490094D4C8 /* audireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C92F2FC2115D9490094D4C8 /* audireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audireUITests.swift; sourceTree = "<group>"; };
-		0C92F2FE2115D9490094D4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C13AE621F3D9AFD00C7847F /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		0C20966D1F497BF5003290DE /* OpenEarsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsHeader.h; sourceTree = "<group>"; };
+		0C3928981F23727300397EDD /* audire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C39289B1F23727300397EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0C39289D1F23727300397EDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C3928A01F23727300397EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0C3928A21F23727300397EDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0C3928A51F23727300397EDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C3928A71F23727300397EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C3928AC1F23727300397EDD /* audireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C3928B71F23727300397EDD /* audireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = audireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C3928C91F2378EA00397EDD /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		0C3928CB1F23791A00397EDD /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		0C3928CF1F23794300397EDD /* ManualEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualEditViewController.swift; sourceTree = "<group>"; };
+		0C3928D11F23796200397EDD /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		0C404CD21F389F590080F4EB /* sight_on_splash_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_splash_ipad.png; sourceTree = "<group>"; };
+		0C4BB7001F3DDCF6001CA4A2 /* TemporaryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryDataManager.swift; sourceTree = "<group>"; };
+		0C4BB7061F3E8198001CA4A2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0C4BB7081F3E845A001CA4A2 /* DatabaseAccessManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccessManager.swift; sourceTree = "<group>"; };
+		0C57DDC81FAE5EDD00C4A7FA /* Places.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Places.realm; sourceTree = "<group>"; };
+		0C6DDAD81F91E52600B03CEF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		0C6F78D71FA4BB68008E30A4 /* VoiceTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceTagViewController.swift; sourceTree = "<group>"; };
+		0C6F78D91FA4C11F008E30A4 /* SoundRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundRecorder.swift; sourceTree = "<group>"; };
+		0C8E85C41F485C7500DF559F /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		0C978E191F375F46003E2232 /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		0C978E1D1F377269003E2232 /* yurakucho_muzhirusi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = yurakucho_muzhirusi.m4a; sourceTree = "<group>"; };
+		0C978E1F1F377300003E2232 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0CA198891F48A98400E9525A /* akihabara_lunch.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = akihabara_lunch.m4a; sourceTree = "<group>"; };
+		0CA1988B1F48AEA000E9525A /* on_the_bridge.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = on_the_bridge.m4a; sourceTree = "<group>"; };
+		0CA1988C1F48AEA000E9525A /* on_stair.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = on_stair.m4a; sourceTree = "<group>"; };
+		0CA1988D1F48AEA000E9525A /* ginza_east.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ginza_east.m4a; sourceTree = "<group>"; };
+		0CA198951F495E0B00E9525A /* washroom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = washroom.wav; sourceTree = "<group>"; };
+		0CBC0F1A1FA0FA740026C1C1 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		0CF2EB5F1F358603003DD9D2 /* FeedListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListItemTableViewCell.swift; sourceTree = "<group>"; };
+		0CF2EB671F35E304003DD9D2 /* sight_on_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_splash.png; sourceTree = "<group>"; };
+		0CF2EB6A1F35E391003DD9D2 /* sight_on_icon_dark_mat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_icon_dark_mat.png; sourceTree = "<group>"; };
+		E6069C831F9A4C3700908DE6 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		E61543971F474E7C007537DA /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		E61543981F474E7C007537DA /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.release.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.release.xcconfig"; sourceTree = "<group>"; };
+		FDC3FB892F9342E81ED957B7 /* Pods-audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0C92F2D42115D9470094D4C8 /* Frameworks */ = {
+		0C3928951F23727300397EDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E615439F1F474E7C007537DA /* Slt.framework in Frameworks */,
+				E615439C1F474E7C007537DA /* OpenEars.framework in Frameworks */,
+				0C978E201F377300003E2232 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C92F2EA2115D9490094D4C8 /* Frameworks */ = {
+		0C3928A91F23727300397EDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61543A01F474E7C007537DA /* Slt.framework in Frameworks */,
+				E615439D1F474E7C007537DA /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C92F2F52115D9490094D4C8 /* Frameworks */ = {
+		0C3928B41F23727300397EDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61543A11F474E7C007537DA /* Slt.framework in Frameworks */,
+				E615439E1F474E7C007537DA /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C92F2CE2115D9470094D4C8 = {
+		0C39288F1F23727300397EDD = {
 			isa = PBXGroup;
 			children = (
-				0C92F2D92115D9470094D4C8 /* audire */,
-				0C92F2F02115D9490094D4C8 /* audireTests */,
-				0C92F2FB2115D9490094D4C8 /* audireUITests */,
-				0C92F2D82115D9470094D4C8 /* Products */,
+				0C39289A1F23727300397EDD /* audire */,
+				0C3928991F23727300397EDD /* Products */,
+				69F220A6DB8DF6AA472C58A4 /* Pods */,
+				15E9702848637B3EB55A3099 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		0C92F2D82115D9470094D4C8 /* Products */ = {
+		0C3928991F23727300397EDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C92F2D72115D9470094D4C8 /* audire.app */,
-				0C92F2ED2115D9490094D4C8 /* audireTests.xctest */,
-				0C92F2F82115D9490094D4C8 /* audireUITests.xctest */,
+				0C3928981F23727300397EDD /* audire.app */,
+				0C3928AC1F23727300397EDD /* audireTests.xctest */,
+				0C3928B71F23727300397EDD /* audireUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0C92F2D92115D9470094D4C8 /* audire */ = {
+		0C39289A1F23727300397EDD /* audire */ = {
 			isa = PBXGroup;
 			children = (
-				0C92F2DA2115D9470094D4C8 /* AppDelegate.swift */,
-				0C92F2DC2115D9470094D4C8 /* FirstViewController.swift */,
-				0C92F2DE2115D9470094D4C8 /* SecondViewController.swift */,
-				0C92F2E02115D9470094D4C8 /* Main.storyboard */,
-				0C92F2E32115D9480094D4C8 /* Assets.xcassets */,
-				0C92F2E52115D9480094D4C8 /* LaunchScreen.storyboard */,
-				0C92F2E82115D9480094D4C8 /* Info.plist */,
+				0C978E1C1F37661F003E2232 /* Data */,
+				0C978E181F375F27003E2232 /* Model */,
+				0CF2EB691F35E370003DD9D2 /* Image */,
+				0C4BB70A1F3E8474001CA4A2 /* Common */,
+				0CF2EB641F35DB1B003DD9D2 /* Record */,
+				0CF2EB631F35DAFA003DD9D2 /* Post */,
+				0CF2EB611F35D0E3003DD9D2 /* Feed */,
+				0C13AE621F3D9AFD00C7847F /* PageViewController.swift */,
+				0C6DDAD81F91E52600B03CEF /* TabBarController.swift */,
+				0CBC0F1A1FA0FA740026C1C1 /* HelpViewController.swift */,
+				0C39289F1F23727300397EDD /* Main.storyboard */,
+				E6069C831F9A4C3700908DE6 /* Post.storyboard */,
+				0C3928A21F23727300397EDD /* Assets.xcassets */,
+				0C3928A41F23727300397EDD /* LaunchScreen.storyboard */,
+				0C3928A71F23727300397EDD /* Info.plist */,
 			);
 			path = audire;
 			sourceTree = "<group>";
 		};
-		0C92F2F02115D9490094D4C8 /* audireTests */ = {
+		0C4BB70A1F3E8474001CA4A2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0C92F2F12115D9490094D4C8 /* audireTests.swift */,
-				0C92F2F32115D9490094D4C8 /* Info.plist */,
+				0C8E85C41F485C7500DF559F /* SoundPlayer.swift */,
+				0C6F78D91FA4C11F008E30A4 /* SoundRecorder.swift */,
+				0C4BB7001F3DDCF6001CA4A2 /* TemporaryDataManager.swift */,
+				0C4BB7081F3E845A001CA4A2 /* DatabaseAccessManager.swift */,
+				0C39289B1F23727300397EDD /* AppDelegate.swift */,
+				0C39289D1F23727300397EDD /* ViewController.swift */,
 			);
-			path = audireTests;
+			name = Common;
 			sourceTree = "<group>";
 		};
-		0C92F2FB2115D9490094D4C8 /* audireUITests */ = {
+		0C978E181F375F27003E2232 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0C92F2FC2115D9490094D4C8 /* audireUITests.swift */,
-				0C92F2FE2115D9490094D4C8 /* Info.plist */,
+				0C978E191F375F46003E2232 /* Sound.swift */,
+				0C4BB7061F3E8198001CA4A2 /* User.swift */,
 			);
-			path = audireUITests;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0C978E1C1F37661F003E2232 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0CA198951F495E0B00E9525A /* washroom.wav */,
+				0CA198891F48A98400E9525A /* akihabara_lunch.m4a */,
+				0C978E1D1F377269003E2232 /* yurakucho_muzhirusi.m4a */,
+				0CA1988B1F48AEA000E9525A /* on_the_bridge.m4a */,
+				0CA1988C1F48AEA000E9525A /* on_stair.m4a */,
+				0CA1988D1F48AEA000E9525A /* ginza_east.m4a */,
+				0C57DDC81FAE5EDD00C4A7FA /* Places.realm */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		0CF2EB611F35D0E3003DD9D2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0C3928CB1F23791A00397EDD /* FeedViewController.swift */,
+				0CF2EB5F1F358603003DD9D2 /* FeedListItemTableViewCell.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		0CF2EB631F35DAFA003DD9D2 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				0C20966D1F497BF5003290DE /* OpenEarsHeader.h */,
+				0C3928CF1F23794300397EDD /* ManualEditViewController.swift */,
+				0C3928D11F23796200397EDD /* PostViewController.swift */,
+				0C6F78D71FA4BB68008E30A4 /* VoiceTagViewController.swift */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		0CF2EB641F35DB1B003DD9D2 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				0C3928C91F2378EA00397EDD /* RecordViewController.swift */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
+		0CF2EB691F35E370003DD9D2 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				0CF2EB671F35E304003DD9D2 /* sight_on_splash.png */,
+				0C404CD21F389F590080F4EB /* sight_on_splash_ipad.png */,
+				0CF2EB6A1F35E391003DD9D2 /* sight_on_icon_dark_mat.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		15E9702848637B3EB55A3099 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E61543951F474E7C007537DA /* Framework */,
+				0C978E1F1F377300003E2232 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69F220A6DB8DF6AA472C58A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDC3FB892F9342E81ED957B7 /* Pods-audire.debug.xcconfig */,
+				EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E61543951F474E7C007537DA /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */,
+				E61543971F474E7C007537DA /* OpenEars.framework */,
+				E61543981F474E7C007537DA /* Slt.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C92F2D62115D9470094D4C8 /* audire */ = {
+		0C3928971F23727300397EDD /* audire */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C92F3012115D9490094D4C8 /* Build configuration list for PBXNativeTarget "audire" */;
+			buildConfigurationList = 0C3928C01F23727300397EDD /* Build configuration list for PBXNativeTarget "audire" */;
 			buildPhases = (
-				0C92F2D32115D9470094D4C8 /* Sources */,
-				0C92F2D42115D9470094D4C8 /* Frameworks */,
-				0C92F2D52115D9470094D4C8 /* Resources */,
+				CA8C9A66AE41D03F84ADD05B /* [CP] Check Pods Manifest.lock */,
+				0C3928941F23727300397EDD /* Sources */,
+				0C3928951F23727300397EDD /* Frameworks */,
+				0C3928961F23727300397EDD /* Resources */,
+				5FE14B39ED8773667CA8F816 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = audire;
-			productName = audire;
-			productReference = 0C92F2D72115D9470094D4C8 /* audire.app */;
+			productName = SightOnMock;
+			productReference = 0C3928981F23727300397EDD /* audire.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C92F2EC2115D9490094D4C8 /* audireTests */ = {
+		0C3928AB1F23727300397EDD /* audireTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C92F3042115D9490094D4C8 /* Build configuration list for PBXNativeTarget "audireTests" */;
+			buildConfigurationList = 0C3928C31F23727300397EDD /* Build configuration list for PBXNativeTarget "audireTests" */;
 			buildPhases = (
-				0C92F2E92115D9490094D4C8 /* Sources */,
-				0C92F2EA2115D9490094D4C8 /* Frameworks */,
-				0C92F2EB2115D9490094D4C8 /* Resources */,
+				0C3928A81F23727300397EDD /* Sources */,
+				0C3928A91F23727300397EDD /* Frameworks */,
+				0C3928AA1F23727300397EDD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C92F2EF2115D9490094D4C8 /* PBXTargetDependency */,
+				0C3928AE1F23727300397EDD /* PBXTargetDependency */,
 			);
 			name = audireTests;
-			productName = audireTests;
-			productReference = 0C92F2ED2115D9490094D4C8 /* audireTests.xctest */;
+			productName = SightOnMockTests;
+			productReference = 0C3928AC1F23727300397EDD /* audireTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0C92F2F72115D9490094D4C8 /* audireUITests */ = {
+		0C3928B61F23727300397EDD /* audireUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C92F3072115D9490094D4C8 /* Build configuration list for PBXNativeTarget "audireUITests" */;
+			buildConfigurationList = 0C3928C61F23727300397EDD /* Build configuration list for PBXNativeTarget "audireUITests" */;
 			buildPhases = (
-				0C92F2F42115D9490094D4C8 /* Sources */,
-				0C92F2F52115D9490094D4C8 /* Frameworks */,
-				0C92F2F62115D9490094D4C8 /* Resources */,
+				0C3928B31F23727300397EDD /* Sources */,
+				0C3928B41F23727300397EDD /* Frameworks */,
+				0C3928B51F23727300397EDD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C92F2FA2115D9490094D4C8 /* PBXTargetDependency */,
+				0C3928B91F23727300397EDD /* PBXTargetDependency */,
 			);
 			name = audireUITests;
-			productName = audireUITests;
-			productReference = 0C92F2F82115D9490094D4C8 /* audireUITests.xctest */;
+			productName = SightOnMockUITests;
+			productReference = 0C3928B71F23727300397EDD /* audireUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0C92F2CF2115D9470094D4C8 /* Project object */ = {
+		0C3928901F23727300397EDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = SightOn;
+				ORGANIZATIONNAME = inai17ibar;
 				TargetAttributes = {
-					0C92F2D62115D9470094D4C8 = {
-						CreatedOnToolsVersion = 9.4.1;
+					0C3928971F23727300397EDD = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N33FTEJ7J3;
+						LastSwiftMigration = 0940;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
-					0C92F2EC2115D9490094D4C8 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 0C92F2D62115D9470094D4C8;
+					0C3928AB1F23727300397EDD = {
+						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0940;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0C3928971F23727300397EDD;
 					};
-					0C92F2F72115D9490094D4C8 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 0C92F2D62115D9470094D4C8;
+					0C3928B61F23727300397EDD = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N33FTEJ7J3;
+						LastSwiftMigration = 0940;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0C3928971F23727300397EDD;
 					};
 				};
 			};
-			buildConfigurationList = 0C92F2D22115D9470094D4C8 /* Build configuration list for PBXProject "audire" */;
-			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			buildConfigurationList = 0C3928931F23727300397EDD /* Build configuration list for PBXProject "audire" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0C92F2CE2115D9470094D4C8;
-			productRefGroup = 0C92F2D82115D9470094D4C8 /* Products */;
+			mainGroup = 0C39288F1F23727300397EDD;
+			productRefGroup = 0C3928991F23727300397EDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0C92F2D62115D9470094D4C8 /* audire */,
-				0C92F2EC2115D9490094D4C8 /* audireTests */,
-				0C92F2F72115D9490094D4C8 /* audireUITests */,
+				0C3928971F23727300397EDD /* audire */,
+				0C3928AB1F23727300397EDD /* audireTests */,
+				0C3928B61F23727300397EDD /* audireUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0C92F2D52115D9470094D4C8 /* Resources */ = {
+		0C3928961F23727300397EDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C92F2E72115D9480094D4C8 /* LaunchScreen.storyboard in Resources */,
-				0C92F2E42115D9480094D4C8 /* Assets.xcassets in Resources */,
-				0C92F2E22115D9470094D4C8 /* Main.storyboard in Resources */,
+				0CA1988A1F48A98400E9525A /* akihabara_lunch.m4a in Resources */,
+				0C3928A61F23727300397EDD /* LaunchScreen.storyboard in Resources */,
+				0CA198901F48AEA000E9525A /* ginza_east.m4a in Resources */,
+				0CF2EB681F35E304003DD9D2 /* sight_on_splash.png in Resources */,
+				0C57DDC91FAE5EDD00C4A7FA /* Places.realm in Resources */,
+				0CA198961F495E0B00E9525A /* washroom.wav in Resources */,
+				0CF2EB6B1F35E391003DD9D2 /* sight_on_icon_dark_mat.png in Resources */,
+				E61543991F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */,
+				0C3928A31F23727300397EDD /* Assets.xcassets in Resources */,
+				0CA1988E1F48AEA000E9525A /* on_the_bridge.m4a in Resources */,
+				0C978E1E1F377269003E2232 /* yurakucho_muzhirusi.m4a in Resources */,
+				0C404CD31F389F590080F4EB /* sight_on_splash_ipad.png in Resources */,
+				0C3928A11F23727300397EDD /* Main.storyboard in Resources */,
+				E6069C841F9A4C3700908DE6 /* Post.storyboard in Resources */,
+				0CA1988F1F48AEA000E9525A /* on_stair.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C92F2EB2115D9490094D4C8 /* Resources */ = {
+		0C3928AA1F23727300397EDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E615439A1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C92F2F62115D9490094D4C8 /* Resources */ = {
+		0C3928B51F23727300397EDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E615439B1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5FE14B39ED8773667CA8F816 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-audire/Pods-audire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-audire/Pods-audire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA8C9A66AE41D03F84ADD05B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-audire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		0C92F2D32115D9470094D4C8 /* Sources */ = {
+		0C3928941F23727300397EDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C92F2DF2115D9470094D4C8 /* SecondViewController.swift in Sources */,
-				0C92F2DB2115D9470094D4C8 /* AppDelegate.swift in Sources */,
-				0C92F2DD2115D9470094D4C8 /* FirstViewController.swift in Sources */,
+				0C3928D01F23794300397EDD /* ManualEditViewController.swift in Sources */,
+				0C13AE631F3D9AFD00C7847F /* PageViewController.swift in Sources */,
+				0C3928CA1F2378EA00397EDD /* RecordViewController.swift in Sources */,
+				0C3928D21F23796200397EDD /* PostViewController.swift in Sources */,
+				0C4BB7011F3DDCF6001CA4A2 /* TemporaryDataManager.swift in Sources */,
+				0C39289E1F23727300397EDD /* ViewController.swift in Sources */,
+				0C6F78D81FA4BB68008E30A4 /* VoiceTagViewController.swift in Sources */,
+				0CF2EB601F358603003DD9D2 /* FeedListItemTableViewCell.swift in Sources */,
+				0C3928CC1F23791A00397EDD /* FeedViewController.swift in Sources */,
+				0C8E85C51F485C7500DF559F /* SoundPlayer.swift in Sources */,
+				0C4BB7071F3E8198001CA4A2 /* User.swift in Sources */,
+				0C6F78DA1FA4C11F008E30A4 /* SoundRecorder.swift in Sources */,
+				0CBC0F1B1FA0FA740026C1C1 /* HelpViewController.swift in Sources */,
+				0C978E1A1F375F46003E2232 /* Sound.swift in Sources */,
+				0C6DDAD91F91E52600B03CEF /* TabBarController.swift in Sources */,
+				0C39289C1F23727300397EDD /* AppDelegate.swift in Sources */,
+				0C4BB7091F3E845A001CA4A2 /* DatabaseAccessManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C92F2E92115D9490094D4C8 /* Sources */ = {
+		0C3928A81F23727300397EDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C92F2F22115D9490094D4C8 /* audireTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C92F2F42115D9490094D4C8 /* Sources */ = {
+		0C3928B31F23727300397EDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C92F2FD2115D9490094D4C8 /* audireUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C92F2EF2115D9490094D4C8 /* PBXTargetDependency */ = {
+		0C3928AE1F23727300397EDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C92F2D62115D9470094D4C8 /* audire */;
-			targetProxy = 0C92F2EE2115D9490094D4C8 /* PBXContainerItemProxy */;
+			target = 0C3928971F23727300397EDD /* audire */;
+			targetProxy = 0C3928AD1F23727300397EDD /* PBXContainerItemProxy */;
 		};
-		0C92F2FA2115D9490094D4C8 /* PBXTargetDependency */ = {
+		0C3928B91F23727300397EDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C92F2D62115D9470094D4C8 /* audire */;
-			targetProxy = 0C92F2F92115D9490094D4C8 /* PBXContainerItemProxy */;
+			target = 0C3928971F23727300397EDD /* audire */;
+			targetProxy = 0C3928B81F23727300397EDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C92F2E02115D9470094D4C8 /* Main.storyboard */ = {
+		0C39289F1F23727300397EDD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0C92F2E12115D9470094D4C8 /* Base */,
+				0C3928A01F23727300397EDD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		0C92F2E52115D9480094D4C8 /* LaunchScreen.storyboard */ = {
+		0C3928A41F23727300397EDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0C92F2E62115D9480094D4C8 /* Base */,
+				0C3928A51F23727300397EDD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -316,17 +558,16 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0C92F2FF2115D9490094D4C8 /* Debug */ = {
+		0C3928BE1F23727300397EDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -345,15 +586,14 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -367,26 +607,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0C92F3002115D9490094D4C8 /* Release */ = {
+		0C3928BF1F23727300397EDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -405,15 +646,14 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -421,173 +661,186 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		0C92F3022115D9490094D4C8 /* Debug */ = {
+		0C3928C11F23727300397EDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC3FB892F9342E81ED957B7 /* Pods-audire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N33FTEJ7J3;
-				INFOPLIST_FILE = audire/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/Framework",
 				);
+				INFOPLIST_FILE = "$(SRCROOT)/audire/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sighton.audire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0C92F3032115D9490094D4C8 /* Release */ = {
+		0C3928C21F23727300397EDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N33FTEJ7J3;
-				INFOPLIST_FILE = audire/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/Framework",
 				);
+				INFOPLIST_FILE = "$(SRCROOT)/audire/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sighton.audire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		0C92F3052115D9490094D4C8 /* Debug */ = {
+		0C3928C41F23727300397EDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N33FTEJ7J3;
-				INFOPLIST_FILE = audireTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Framework",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sighton.audireTests;
+				INFOPLIST_FILE = SightOnMockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/audire.app/audire";
 			};
 			name = Debug;
 		};
-		0C92F3062115D9490094D4C8 /* Release */ = {
+		0C3928C51F23727300397EDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N33FTEJ7J3;
-				INFOPLIST_FILE = audireTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Framework",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sighton.audireTests;
+				INFOPLIST_FILE = SightOnMockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/audire.app/audire";
 			};
 			name = Release;
 		};
-		0C92F3082115D9490094D4C8 /* Debug */ = {
+		0C3928C71F23727300397EDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N33FTEJ7J3;
-				INFOPLIST_FILE = audireUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Framework",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sighton.audireUITests;
+				INFOPLIST_FILE = SightOnMockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = audire;
+				TEST_TARGET_NAME = SightOnMock;
 			};
 			name = Debug;
 		};
-		0C92F3092115D9490094D4C8 /* Release */ = {
+		0C3928C81F23727300397EDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N33FTEJ7J3;
-				INFOPLIST_FILE = audireUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"$(PROJECT_DIR)/Framework",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sighton.audireUITests;
+				INFOPLIST_FILE = SightOnMockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = audire;
+				TEST_TARGET_NAME = SightOnMock;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C92F2D22115D9470094D4C8 /* Build configuration list for PBXProject "audire" */ = {
+		0C3928931F23727300397EDD /* Build configuration list for PBXProject "audire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C92F2FF2115D9490094D4C8 /* Debug */,
-				0C92F3002115D9490094D4C8 /* Release */,
+				0C3928BE1F23727300397EDD /* Debug */,
+				0C3928BF1F23727300397EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C92F3012115D9490094D4C8 /* Build configuration list for PBXNativeTarget "audire" */ = {
+		0C3928C01F23727300397EDD /* Build configuration list for PBXNativeTarget "audire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C92F3022115D9490094D4C8 /* Debug */,
-				0C92F3032115D9490094D4C8 /* Release */,
+				0C3928C11F23727300397EDD /* Debug */,
+				0C3928C21F23727300397EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C92F3042115D9490094D4C8 /* Build configuration list for PBXNativeTarget "audireTests" */ = {
+		0C3928C31F23727300397EDD /* Build configuration list for PBXNativeTarget "audireTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C92F3052115D9490094D4C8 /* Debug */,
-				0C92F3062115D9490094D4C8 /* Release */,
+				0C3928C41F23727300397EDD /* Debug */,
+				0C3928C51F23727300397EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C92F3072115D9490094D4C8 /* Build configuration list for PBXNativeTarget "audireUITests" */ = {
+		0C3928C61F23727300397EDD /* Build configuration list for PBXNativeTarget "audireUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C92F3082115D9490094D4C8 /* Debug */,
-				0C92F3092115D9490094D4C8 /* Release */,
+				0C3928C71F23727300397EDD /* Debug */,
+				0C3928C81F23727300397EDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0C92F2CF2115D9470094D4C8 /* Project object */;
+	rootObject = 0C3928901F23727300397EDD /* Project object */;
 }

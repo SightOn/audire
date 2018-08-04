@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="J6I-Fq-bUx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post Navigation Controller-->
+        <scene sceneID="tOM-qq-Kt6">
+            <objects>
+                <navigationController storyboardIdentifier="PostNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J6I-Fq-bUx" userLabel="Post Navigation Controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hco-vK-bWG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BO1-Fz-pBB" kind="relationship" relationship="rootViewController" id="qPc-qN-12z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HG4-nT-nXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="-689"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="KKo-Th-sHf">
+            <objects>
+                <viewController storyboardIdentifier="Post" title="PostViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BO1-Fz-pBB" userLabel="Post View Controller" customClass="PostViewController" customModule="audire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="53n-jV-nsC"/>
+                        <viewControllerLayoutGuide type="bottom" id="azf-WZ-qvv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="044-tt-99h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoN-7z-us2">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oJd-hx-H7J">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgZ-Rd-afl" userLabel="View1">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkQ-05-uxn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                                                        <color key="backgroundColor" red="0.21402174234390259" green="0.53821700811386108" blue="0.81899756193161011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" label="保存"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                        <state key="normal" title="保存">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="buttonTapped:" destination="BO1-Fz-pBB" eventType="touchUpInside" id="gsK-8R-MmC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="OkQ-05-uxn" firstAttribute="height" secondItem="pgZ-Rd-afl" secondAttribute="height" id="0Ms-BO-dbX"/>
+                                                    <constraint firstItem="OkQ-05-uxn" firstAttribute="top" secondItem="pgZ-Rd-afl" secondAttribute="top" id="0NO-LS-z5M"/>
+                                                    <constraint firstItem="OkQ-05-uxn" firstAttribute="width" secondItem="pgZ-Rd-afl" secondAttribute="width" id="7rT-5H-ZVh"/>
+                                                    <constraint firstItem="OkQ-05-uxn" firstAttribute="centerX" secondItem="pgZ-Rd-afl" secondAttribute="centerX" id="ymz-bR-bJq"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="auF-eb-4jE" userLabel="View2">
+                                                <rect key="frame" x="0.0" y="304" width="375" height="303"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdP-it-4IO">
+                                                        <rect key="frame" x="0.0" y="0.5" width="375" height="303"/>
+                                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" label="キャンセル"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                                        <state key="normal" title="キャンセル">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="dismissButtonTapped:" destination="BO1-Fz-pBB" eventType="touchUpInside" id="DyC-SZ-4VB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="VdP-it-4IO" firstAttribute="width" secondItem="auF-eb-4jE" secondAttribute="width" id="PJA-9W-Mct"/>
+                                                    <constraint firstItem="VdP-it-4IO" firstAttribute="centerX" secondItem="auF-eb-4jE" secondAttribute="centerX" id="Xr0-pQ-4kg"/>
+                                                    <constraint firstItem="VdP-it-4IO" firstAttribute="height" secondItem="auF-eb-4jE" secondAttribute="height" id="egg-4y-oMO"/>
+                                                    <constraint firstItem="VdP-it-4IO" firstAttribute="centerY" secondItem="auF-eb-4jE" secondAttribute="centerY" id="g0V-7N-35D"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="auF-eb-4jE" firstAttribute="centerX" secondItem="oJd-hx-H7J" secondAttribute="centerX" id="LHT-Rx-yU6"/>
+                                            <constraint firstItem="pgZ-Rd-afl" firstAttribute="centerX" secondItem="oJd-hx-H7J" secondAttribute="centerX" id="bqZ-UR-bCO"/>
+                                            <constraint firstItem="auF-eb-4jE" firstAttribute="width" secondItem="oJd-hx-H7J" secondAttribute="width" id="kCq-ro-OGf"/>
+                                            <constraint firstItem="pgZ-Rd-afl" firstAttribute="height" secondItem="oJd-hx-H7J" secondAttribute="height" multiplier="0.5" id="nki-7j-99R"/>
+                                            <constraint firstItem="pgZ-Rd-afl" firstAttribute="width" secondItem="oJd-hx-H7J" secondAttribute="width" id="t8P-Tc-zUf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oJd-hx-H7J" firstAttribute="width" secondItem="eoN-7z-us2" secondAttribute="width" id="6ZU-lQ-Gqc"/>
+                                    <constraint firstItem="oJd-hx-H7J" firstAttribute="centerX" secondItem="eoN-7z-us2" secondAttribute="centerX" id="MuC-Ov-0Tz"/>
+                                    <constraint firstItem="oJd-hx-H7J" firstAttribute="height" secondItem="eoN-7z-us2" secondAttribute="height" id="hxG-T8-9Sh"/>
+                                    <constraint firstItem="oJd-hx-H7J" firstAttribute="centerY" secondItem="eoN-7z-us2" secondAttribute="centerY" id="lVW-U6-zuf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eoN-7z-us2" firstAttribute="height" secondItem="044-tt-99h" secondAttribute="height" constant="-60" id="7F5-2a-try"/>
+                            <constraint firstItem="eoN-7z-us2" firstAttribute="width" secondItem="044-tt-99h" secondAttribute="width" id="ZJO-0G-XYP"/>
+                            <constraint firstItem="eoN-7z-us2" firstAttribute="bottom" secondItem="azf-WZ-qvv" secondAttribute="top" id="Zu5-Ec-KW4"/>
+                            <constraint firstItem="eoN-7z-us2" firstAttribute="centerX" secondItem="044-tt-99h" secondAttribute="centerX" id="uRz-do-qkp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="保存画面" id="abe-Gn-sRd"/>
+                    <connections>
+                        <outlet property="dismissButton" destination="VdP-it-4IO" id="9wc-Gi-EO9"/>
+                        <outlet property="postButton" destination="OkQ-05-uxn" id="YoF-2x-tCF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Yw-vM-Yqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2936.8000000000002" y="-667.01649175412297"/>
+        </scene>
+        <!--VoiceTag Navigation Controller-->
+        <scene sceneID="SGs-7P-zcI">
+            <objects>
+                <navigationController storyboardIdentifier="VoiceTagNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rNf-5r-S3p" userLabel="VoiceTag Navigation Controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2wg-vu-MWb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jZw-Rk-axC" kind="relationship" relationship="rootViewController" id="SIv-Ff-zch"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogT-dA-UIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="92"/>
+        </scene>
+        <!--VoiceTag View Controller-->
+        <scene sceneID="MEk-3m-it0">
+            <objects>
+                <viewController storyboardIdentifier="VoiceTagViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jZw-Rk-axC" userLabel="VoiceTag View Controller" customClass="VoiceTagViewController" customModule="audire" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R7N-1m-ybJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="RwT-Gu-cgD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fhi-ls-mis">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQS-DS-ASv" userLabel="VoiceTagRecordButton">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="録音開始"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <state key="normal" title="タグの録音開始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="jZw-Rk-axC" eventType="touchDown" id="VrD-s3-GFJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PQS-DS-ASv" firstAttribute="height" secondItem="fhi-ls-mis" secondAttribute="height" constant="-60" id="N1c-vC-oK2"/>
+                            <constraint firstItem="PQS-DS-ASv" firstAttribute="top" secondItem="R7N-1m-ybJ" secondAttribute="bottom" constant="-4" id="XKv-73-el2"/>
+                            <constraint firstItem="PQS-DS-ASv" firstAttribute="width" secondItem="fhi-ls-mis" secondAttribute="width" id="g8R-At-fiK"/>
+                            <constraint firstItem="PQS-DS-ASv" firstAttribute="centerX" secondItem="fhi-ls-mis" secondAttribute="centerX" id="sdW-wK-mHw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="録音モード" id="JSq-4S-iEt"/>
+                    <navigationItem key="navigationItem" title="音声タグ入力画面" id="Dd6-6M-1kk"/>
+                    <connections>
+                        <outlet property="recordButton" destination="PQS-DS-ASv" id="C2t-S4-s1R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pN-Rf-f4P" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2937" y="91"/>
+        </scene>
+    </scenes>
+</document>
