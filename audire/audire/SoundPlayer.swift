@@ -28,7 +28,7 @@ class SoundPlayer: NSObject, AVAudioPlayerDelegate {
     override init(){
     }
     
-    public func initPlayer(url: URL)
+    public func InitPlayer(url: URL)
     {
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: url)
@@ -50,17 +50,17 @@ class SoundPlayer: NSObject, AVAudioPlayerDelegate {
         }
     }
     
-    public func play(url: URL)
+    public func Play(url: URL)
     {
-        if url == getSoundURL() && audioPlayer.isPlaying {
+        if url == GetSoundURL() && audioPlayer.isPlaying {
             os_log("already has playing", log: log, type: .error)
             return
         }
-        initPlayer(url: url)
-        play()
+        InitPlayer(url: url)
+        Play()
     }
     
-    public func play()
+    public func Play()
     {
         if !hasInit {
             return
@@ -70,14 +70,14 @@ class SoundPlayer: NSObject, AVAudioPlayerDelegate {
         self.delegate?.updatePlayBtnsTitle(text: "Stop")
     }
     
-    public func stop()
+    public func Stop()
     {
         os_log("stop", log: log, type: .default)
         audioPlayer.stop()
         self.delegate?.updatePlayBtnsTitle(text: "Play")
     }
     
-    public func isPlaying() -> Bool
+    public func IsPlaying() -> Bool
     {
         if playingUrl == nil
         {
@@ -86,14 +86,9 @@ class SoundPlayer: NSObject, AVAudioPlayerDelegate {
         return audioPlayer.isPlaying
     }
     
-    public func getSoundURL() -> URL? //nilがはいることを保証する
+    public func GetSoundURL() -> URL? //nilがはいることを保証する
     {
         return playingUrl
-    }
-    
-    public func setVolume(volume: Float)
-    {
-        audioPlayer.volume = volume
     }
     
     //再生終了時の呼び出しメソッド

@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import RealmSwift
 
-class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SoundPlayerDelegate {
+class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SoundPlayerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textfield: UIView!
@@ -61,7 +61,7 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         {
             seleted_url = URL(fileURLWithPath: documentPath + "/" + sounds[0].file_path)
         }
-        soundPlayer.initPlayer(url: seleted_url)
+        soundPlayer.InitPlayer(url: seleted_url)
         
         //Now reload the tableView
         self.tableView.reloadData()
@@ -69,7 +69,7 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        soundPlayer.stop()
+        soundPlayer.Stop()
     }
     
     internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,30 +136,28 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         print("select_sound: " , seleted_url as Any)
         print("select_voice_tag: " , voice_tag_url as Any)
         
-        if (soundPlayer.getSoundURL() == seleted_url)
+        if (soundPlayer.GetSoundURL() == seleted_url)
         {
             //曲がセット済みのとき
-            if soundPlayer.isPlaying(){
+            if soundPlayer.IsPlaying(){
                 cell.titleLabel.accessibilityLabel = cell.titleLabel.text
                 ttsStopSound()
-                soundPlayer.stop()
+                soundPlayer.Stop()
             }
             else{
                 cell.titleLabel.accessibilityLabel = "再生中" //再生中の要素を示すため
                 ttsPlaySound()
                 
                 //3秒の間ボイスタグを流して
-                if(sounds[indexPath.row].voice_tags[0].tagFilePath != "")
-                {
+                if(sounds[indexPath.row].voice_tags[0].tagFilePath != ""){
                     print("has voice tag")
-                    soundPlayer.play(url: voice_tag_url)
+                    soundPlayer.Play(url: voice_tag_url)
                     let dispatchTime = DispatchTime.now() + 3.0
                     DispatchQueue.main.asyncAfter( deadline: dispatchTime ) {
-                        self.soundPlayer.play(url: seleted_url)
+                        self.soundPlayer.Play(url: seleted_url)
                     }
-                }else
-                {
-                    soundPlayer.play(url: seleted_url)
+                }else{
+                    soundPlayer.Play(url: seleted_url)
                 }
             }
         }
@@ -169,21 +167,19 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
             {
                 cell_i.titleLabel.accessibilityLabel = cell_i.titleLabel.text
             }
-            //曲がセットされてないとき
             cell.titleLabel.accessibilityLabel = "再生中"
             ttsPlaySound()
             //3秒の間ボイスタグを流して
             if(sounds[indexPath.row].voice_tags[0].tagFilePath != "")
             {
                 print("has voice tag")
-                soundPlayer.play(url: voice_tag_url)
+                soundPlayer.Play(url: voice_tag_url)
                 let dispatchTime = DispatchTime.now() + 3.0
                 DispatchQueue.main.asyncAfter( deadline: dispatchTime ) {
-                    self.soundPlayer.play(url: seleted_url)
+                    self.soundPlayer.Play(url: seleted_url)
                 }
-            }else
-            {
-                soundPlayer.play(url: seleted_url)
+            }else{
+                soundPlayer.Play(url: seleted_url)
             }
         }
         // 選択を常に解除しておく(解除しないほうが状態がわかりそう)
@@ -206,18 +202,13 @@ class FeedViewController: ViewController, UITableViewDelegate, UITableViewDataSo
         let utterance = AVSpeechUtterance(string: "再生停止")
         utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
         talker.speak(utterance)
-        
         sleep(2)
     }
     
-    func updateMessage(text: String)
-    {
-        
+    func updateMessage(text: String){
     }
     
-    func updatePlayBtnsTitle(text: String)
-    {
-        
+    func updatePlayBtnsTitle(text: String){
     }
     
     @objc func onRefresh(_ refreshControl: UIRefreshControl){

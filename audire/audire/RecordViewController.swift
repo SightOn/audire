@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordViewController: ViewController{
+class RecordViewController: BaseViewController{
 
     @IBOutlet weak var button: UIButton!
 
@@ -147,7 +147,7 @@ class RecordViewController: ViewController{
     
     private func saveRecordData()
     {
-        dataManager.save(fileName)
+        dataManager.Set(fileName)
     }
 
     override func didReceiveMemoryWarning() {

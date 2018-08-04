@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpViewController: ViewController, UIWebViewDelegate {
+class HelpViewController: BaseViewController, UIWebViewDelegate {
 
     @IBOutlet weak var helpWebView: UIWebView!
 

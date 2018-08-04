@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseViewController: UIViewController {
 
     let feedbackGenerator: Any? = {
         if #available(iOS 10.0, *) {

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class VoiceTagViewController: ViewController {
+class VoiceTagViewController: BaseViewController {
     
     @IBOutlet weak var recordButton: UIButton!
 
@@ -223,11 +223,11 @@ class VoiceTagViewController: ViewController {
     
     private func post()
     {
-        let file_name = temp_data.load()
+        let file_name = temp_data.Get()
         print()
         database.CreateData(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [tag_file_name], createDate: Date())
         database.Add()
-        temp_data.clean()
+        temp_data.Clean()
     }
     
 }
