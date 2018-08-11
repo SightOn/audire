@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class RecordViewController: ViewController{
+class RecordViewController: BaseViewController{
 
     @IBOutlet weak var button: UIButton!
 
@@ -31,7 +31,7 @@ class RecordViewController: ViewController{
         disactiveRecorder()
     }
     
-    func disactiveRecorder()
+    private func disactiveRecorder()
     {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         fileName = "sound_" + getNowMonthDayString()+".wav"
@@ -59,7 +59,7 @@ class RecordViewController: ViewController{
         }
     }
 
-    func initRecorder()
+    private func initRecorder()
     {
         // 録音ファイルを指定する
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -111,7 +111,7 @@ class RecordViewController: ViewController{
         showAlert()
     }
     
-    func finishRecord(){
+    private func finishRecord(){
         // 押されたら実行したい処理
         print("finish recording")
         self.button.setTitle("録音終了", for: .normal)
@@ -126,7 +126,7 @@ class RecordViewController: ViewController{
         self.present(nextViewController, animated:true, completion:nil)
     }
     
-    func showAlert() {
+    private func showAlert() {
         // アラートを作成
         let alert = UIAlertController(
             title: "",
@@ -145,9 +145,9 @@ class RecordViewController: ViewController{
         self.audioRecorder.record()
     }
     
-    func saveRecordData()
+    private func saveRecordData()
     {
-        dataManager.save(fileName)
+        dataManager.Set(fileName)
     }
 
     override func didReceiveMemoryWarning() {

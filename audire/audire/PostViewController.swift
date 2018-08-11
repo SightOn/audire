@@ -12,7 +12,7 @@ import Foundation
 import AudioUnit
 import AudioToolbox
 
-class PostViewController: ViewController {
+class PostViewController: BaseViewController {
     @IBOutlet weak var Editbutton: UIButton!
     let buttonLabel: [String] = ["オリジナル", "リバーブ1", "リバーブ2", "リバーブ3"]
     var buttonidx=0
@@ -24,7 +24,7 @@ class PostViewController: ViewController {
     let database = DatabaseAccessManager()
     
     let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-    let file_name = TemporaryDataManager().load()
+    let file_name = TemporaryDataManager().Get()
     var file_path: String!
     
     // インスタンス変数
@@ -50,7 +50,7 @@ class PostViewController: ViewController {
         
         print("[post] viewWillAppear")
         
-        file_path = documentPath + "/" + TemporaryDataManager().load()
+        file_path = documentPath + "/" + TemporaryDataManager().Get()
         let fileUrl = URL(fileURLWithPath: file_path)
         
         //プレイヤーの初期化
@@ -118,10 +118,10 @@ class PostViewController: ViewController {
         if(isEffected){
             saveData()
         }
-        let file_name = temp_data.load()
-        database.create(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [""], createDate: Date())
-        database.add()
-        temp_data.clean()
+        let file_name = temp_data.Get()
+        database.CreateData(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [""], createDate: Date())
+        database.Add()
+        temp_data.Clean()
     }
 
     func saveData()
@@ -186,7 +186,7 @@ class PostViewController: ViewController {
         }
         
         //一時データ削除
-        temp_data.clean()
+        temp_data.Clean()
 
         //再生停止
         self.player.stop()

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class VoiceTagViewController: ViewController {
+class VoiceTagViewController: BaseViewController {
     
     @IBOutlet weak var recordButton: UIButton!
 
@@ -40,7 +40,7 @@ class VoiceTagViewController: ViewController {
         disactiveRecorder()
     }
     
-    func disactiveRecorder()
+    private func disactiveRecorder()
     {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         tag_file_name = "voice_tag_"+getNowDateString()+".wav"
@@ -69,7 +69,7 @@ class VoiceTagViewController: ViewController {
         }
     }
     
-    func initRecorder()
+    private func initRecorder()
     {
         // 録音ファイルを指定する
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
@@ -102,7 +102,8 @@ class VoiceTagViewController: ViewController {
     @IBAction func buttonTapped(_ sender : Any) {
         startRecord()
     }
-    func startRecord(){
+    
+    private func startRecord(){
         //一時的にVOをオフ
         recordButton.setTitle("録音中", for: .normal)
         recordButton.backgroundColor = UIColor(red: 255/255, green: 126/255, blue: 121/255, alpha: 1.0)
@@ -122,7 +123,7 @@ class VoiceTagViewController: ViewController {
         showAlert()
     }
     
-    func showAlert() {
+    private func showAlert() {
         // アラートを作成
         let alert = UIAlertController(
             title: "",
@@ -141,7 +142,7 @@ class VoiceTagViewController: ViewController {
         self.audioRecorder.record()
     }
     
-    func finishRecord(){
+    private func finishRecord(){
         // 押されたら実行したい処理
         print("finish recording")
         self.recordButton.setTitle("タグの録音終了", for: .normal)
@@ -165,7 +166,7 @@ class VoiceTagViewController: ViewController {
         confirmationAlert()
     }
     
-    func confirmationAlert() {
+    private func confirmationAlert() {
         // アラートを作成
         let alert = UIAlertController(
             title: "",
@@ -203,7 +204,7 @@ class VoiceTagViewController: ViewController {
     }
     
     //?
-    func deleteTagFile(){
+    private func deleteTagFile(){
         do {
             let fileManager = FileManager.default
             
@@ -220,13 +221,13 @@ class VoiceTagViewController: ViewController {
         }
     }
     
-    func post()
+    private func post()
     {
-        let file_name = temp_data.load()
+        let file_name = temp_data.Get()
         print()
-        database.create(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [tag_file_name], createDate: Date())
-        database.add()
-        temp_data.clean()
+        database.CreateData(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [tag_file_name], createDate: Date())
+        database.Add()
+        temp_data.Clean()
     }
     
 }

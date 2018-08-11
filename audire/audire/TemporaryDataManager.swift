@@ -20,21 +20,18 @@ class TemporaryDataManager {
         filePath = ""
     }
     
-    open func save(_ fileName :String)
+    open func Set(_ fileName :String)
     {
         let userDefault = UserDefaults.standard
         userDefault.set(fileName, forKey: "Key") // キーを指定してオブジェクトを保存
     }
     
-    open func load() -> String
+    open func Get() -> String
     {
         return userDefaults.string(forKey: "Key")!
     }
     
-    // Keyを指定して読み込み(使用イメージ)
-    //let filePath: String = loadDataPath()
-    
-    open func clean()
+    open func Clean()
     {
         userDefaults.removeObject(forKey: "Key")
     }

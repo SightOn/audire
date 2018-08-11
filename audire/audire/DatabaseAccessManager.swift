@@ -14,25 +14,25 @@ class DatabaseAccessManager{
     static let sharedInstance = DatabaseAccessManager()
     var sound: Sound!
     
-    init (){
+    //contructor
+    init(){
         sound = Sound()
     }
     
-    func add()
+    public func Add()
     {
         if sound.id == 0 {
             return
         }
         let realm = try! Realm()
         
-        // Realmへのオブジェクトの書き込み
         try! realm.write {
             realm.add(sound)
             print("add on database, " + sound.file_path)
         }
     }
     
-    func create_test(_ filePath: String, dataName: String, userId: Int, tags: [String], voiceTags: [String], createDate: Date)
+    public func CreateTestData(_ filePath: String, dataName: String, userId: Int, tags: [String], voiceTags: [String], createDate: Date)
     {
         sound = Sound()
         
@@ -50,7 +50,6 @@ class DatabaseAccessManager{
             voiceTagsList.append(newTag)
         }
         
-        // Sound型オブジェクトの作成
         sound.file_path = filePath
         sound.sound_name = dataName
         sound.user_id = userId
@@ -63,7 +62,7 @@ class DatabaseAccessManager{
         sound.save()
     }
     
-    func create(_ filePath: String, dataName: String, userId: Int, tags: [String], voiceTags: [String], createDate: Date)
+    public func CreateData(_ filePath: String, dataName: String, userId: Int, tags: [String], voiceTags: [String], createDate: Date)
     {
         sound = Sound()
         
@@ -81,7 +80,6 @@ class DatabaseAccessManager{
             voiceTagsList.append(newTag)
         }
         
-        // Sound型オブジェクトの作成
         sound.file_path = filePath
         sound.sound_name = dataName
         sound.user_id = userId
@@ -94,13 +92,8 @@ class DatabaseAccessManager{
         sound.save()
     }
     
-    func update(sound: Sound, filePath: String, dataName: String, userId: Int, tags: [String], voiceTags: [String], updateDate: Date)
-    {
-        
-    }
-    
     //DBから読み込んで表示する場合
-    func extractByUserId(_ number: Int) -> Results<Sound>
+    public func ExtractByUserId(_ number: Int) -> Results<Sound>
     {
         let realm = try! Realm()
     
@@ -109,7 +102,7 @@ class DatabaseAccessManager{
     }
     
     //DBの初期化
-    func deleteAll()
+    public func DeleteAll()
     {
         let realm = try! Realm()
         try! realm.write {

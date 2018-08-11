@@ -4,7 +4,7 @@ platform :ios, '11.4'
 use_frameworks!
 
 swift_version = "4.1"
-# Swiftのバージョンチェック
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
@@ -16,5 +16,5 @@ end
 
 target 'audire' do
   use_frameworks!
-  pod 'RealmSwift'# Pods for SampleLocation
+  pod 'RealmSwift'
 end

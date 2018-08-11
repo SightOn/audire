@@ -9,12 +9,10 @@
 import Foundation
 import RealmSwift
 
-// Tagクラス
 class Tag: Object {
     @objc dynamic var tagName: String = ""
 }
 
-// Tagクラス
 class VoiceTag: Object {
     @objc dynamic var tagFilePath: String = ""
 }
