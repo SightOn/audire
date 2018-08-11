@@ -37,6 +37,7 @@
 		0CF2EB601F358603003DD9D2 /* FeedListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2EB5F1F358603003DD9D2 /* FeedListItemTableViewCell.swift */; };
 		0CF2EB681F35E304003DD9D2 /* sight_on_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF2EB671F35E304003DD9D2 /* sight_on_splash.png */; };
 		0CF2EB6B1F35E391003DD9D2 /* sight_on_icon_dark_mat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CF2EB6A1F35E391003DD9D2 /* sight_on_icon_dark_mat.png */; };
+		77F1443922F11E6431D59886 /* Pods_audire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAE219A4B0280B44CEA3372 /* Pods_audire.framework */; };
 		E6069C841F9A4C3700908DE6 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6069C831F9A4C3700908DE6 /* Post.storyboard */; };
 		E61543991F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
 		E615439A1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */; };
@@ -95,6 +96,7 @@
 		0CF2EB5F1F358603003DD9D2 /* FeedListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedListItemTableViewCell.swift; sourceTree = "<group>"; };
 		0CF2EB671F35E304003DD9D2 /* sight_on_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_splash.png; sourceTree = "<group>"; };
 		0CF2EB6A1F35E391003DD9D2 /* sight_on_icon_dark_mat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sight_on_icon_dark_mat.png; sourceTree = "<group>"; };
+		DCAE219A4B0280B44CEA3372 /* Pods_audire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_audire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6069C831F9A4C3700908DE6 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.release.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C978E201F377300003E2232 /* AVFoundation.framework in Frameworks */,
+				77F1443922F11E6431D59886 /* Pods_audire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +249,7 @@
 			children = (
 				E61543951F474E7C007537DA /* Framework */,
 				0C978E1F1F377300003E2232 /* AVFoundation.framework */,
+				DCAE219A4B0280B44CEA3372 /* Pods_audire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
