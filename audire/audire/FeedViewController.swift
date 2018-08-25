@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import RealmSwift
-
+import Firebase
 class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SoundPlayerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,6 +25,60 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     
+    //firestorage
+    private var feedelements: [WebFeedElement] = []
+    fileprivate var query: Query? {
+        didSet {
+            if let listener = listener {
+                listener.remove()
+                observeQuery()
+            }
+        }
+    }
+    private var listener: ListenerRegistration?
+    
+    fileprivate func observeQuery() {
+        guard let query = query else { return }
+        stopObserving()
+        
+        // Display data from Firestore, part one
+        listener = query.addSnapshotListener { [unowned self] (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error fetching snapshot results: \(error!)")
+                return
+            }
+            let models = snapshot.documents.map { (document) -> WebFeedElement in
+                if let model = WebFeedElement(dictionary: document.data()) {
+                    return model
+                } else {
+                    // Don't use fatalError here in a real app.
+                    fatalError("Unable to initialize type \(WebFeedElement.self) with dictionary \(document.data())")
+                }
+                
+            }
+            
+            self.feedelements = models
+            /*self.documents = snapshot.documents
+            
+            if self.documents.count > 0 {
+                self.tableView.backgroundView = nil
+            } else {
+                self.tableView.backgroundView = self.backgroundView
+            }
+             */
+            print(snapshot.documents)
+            self.tableView.reloadData()
+        }
+        
+    }
+    fileprivate func stopObserving() {
+        listener?.remove()
+    }
+    
+    fileprivate func baseQuery() -> Query {
+        return Firestore.firestore().collection("users").limit(to: 50)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,12 +93,16 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                                  action: #selector(FeedViewController.onRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
+        
+        query = baseQuery()
     }
     
     //画面に来る度，毎回呼び出される
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        observeQuery()
+
         realm = try! Realm()
         
         //データの読み出し，更新
@@ -77,13 +135,7 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //読み込み済みデータ数を返すべき
-        if section == 0
-        {
-            return limitedCellCount
-        }
-        //通常はここに到達しない
-        return 0
+        return feedelements.count
     }
     
     internal func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -92,13 +144,13 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         _ = maximumOffset - currentOffsetY
         if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
             //print("一番下に到達した時の処理")
-            if(sounds.count >= limitedCellCount + 5)
+            if(feedelements.count >= limitedCellCount + 5)
             {
-                limitedCellCount = sounds.count + 5
+                limitedCellCount = feedelements.count + 5
             }
             else
             {
-                limitedCellCount = sounds.count
+                limitedCellCount = feedelements.count
             }
             tableView.reloadData()
         }
@@ -106,10 +158,9 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     //セルのデータの読み出し
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListItem") as! FeedListItemTableViewCell
-            cell.titleLabel.text = sounds[indexPath.row].sound_name
+            cell.titleLabel.text = feedelements[indexPath.row].showText;//sounds[indexPath.row].sound_name
             return cell
         }
         return UITableViewCell()
@@ -118,6 +169,7 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     //あるセルを押したら再生
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        //TODO get url and wav file from firebase, play them
         var seleted_url: URL
         if(sounds[indexPath.row].is_test_data)
         {
@@ -230,4 +282,6 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
         tableView.reloadData()
     }
+
 }
+

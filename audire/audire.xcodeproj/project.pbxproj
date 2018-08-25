@@ -45,6 +45,9 @@
 		E6204342213190F000C46468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6204341213190EF00C46468 /* GoogleService-Info.plist */; };
 		E6204343213190F000C46468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6204341213190EF00C46468 /* GoogleService-Info.plist */; };
 		E6204344213190F000C46468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6204341213190EF00C46468 /* GoogleService-Info.plist */; };
+		E6566DB92131BE6F0015537C /* WebFeedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6566DB82131BE6F0015537C /* WebFeedElement.swift */; };
+		E6566DBA2131BE6F0015537C /* WebFeedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6566DB82131BE6F0015537C /* WebFeedElement.swift */; };
+		E6566DBB2131BE6F0015537C /* WebFeedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6566DB82131BE6F0015537C /* WebFeedElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,7 @@
 		E6069C831F9A4C3700908DE6 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		E6204341213190EF00C46468 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E6566DB82131BE6F0015537C /* WebFeedElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFeedElement.swift; sourceTree = "<group>"; };
 		EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.release.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.release.xcconfig"; sourceTree = "<group>"; };
 		FDC3FB892F9342E81ED957B7 /* Pods-audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +190,7 @@
 				0C4BB7081F3E845A001CA4A2 /* DatabaseAccessManager.swift */,
 				0C39289B1F23727300397EDD /* AppDelegate.swift */,
 				0C39289D1F23727300397EDD /* BaseViewController.swift */,
+				E6566DB82131BE6F0015537C /* WebFeedElement.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6566DB92131BE6F0015537C /* WebFeedElement.swift in Sources */,
 				0C13AE631F3D9AFD00C7847F /* PageViewController.swift in Sources */,
 				0C3928CA1F2378EA00397EDD /* RecordViewController.swift in Sources */,
 				0C3928D21F23796200397EDD /* PostViewController.swift in Sources */,
@@ -550,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6566DBA2131BE6F0015537C /* WebFeedElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6566DBB2131BE6F0015537C /* WebFeedElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +771,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Framework",
@@ -771,6 +780,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "audire/audireTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/audire.app/audire";
@@ -782,6 +793,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Framework",
@@ -790,6 +802,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "audire/audireTests-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/audire.app/audire";
@@ -800,6 +813,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N33FTEJ7J3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -811,6 +825,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "audire/audireUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = SightOnMock;
@@ -821,6 +837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = N33FTEJ7J3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -832,6 +849,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SightOnMockUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "audire/audireUITests-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = SightOnMock;
