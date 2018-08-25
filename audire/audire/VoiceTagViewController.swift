@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 class VoiceTagViewController: BaseViewController {
     
@@ -15,7 +16,7 @@ class VoiceTagViewController: BaseViewController {
 
     var audioRecorder:AVAudioRecorder!
     var tag_file_name:String!
-    var filePath:String!
+    var file_path:String!
     let temp_data = TemporaryDataManager()
     let database = DatabaseAccessManager()
     
@@ -23,11 +24,18 @@ class VoiceTagViewController: BaseViewController {
     var soundPlayer:SoundPlayer!
     var audioPlayer:AVAudioPlayer!
     var isRecording = false
-    
+
+    //firebase
+    var db: Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // [START setup]
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        // [END setup]
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,13 +47,58 @@ class VoiceTagViewController: BaseViewController {
         recordButton.setTitle("音声タグの録音開始", for: .normal)
         disactiveRecorder()
     }
+ 
+    private func addDataToFirebase(fileName: String, dataName: String) {
+        // [START add_ada_lovelace]
+        // Add a new document with a generated ID
+        var ref: DocumentReference? = nil
+        
+        // Get a reference to the storage service using the default Firebase App
+        let storage = Storage.storage()
+        // Create a storage reference from our storage service
+        let storageRef = storage.reference()
+        // File located on disk
+        let localFile = URL(string: "file://"+file_path)!
+        // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("audios/"+fileName)
+        
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            // You can also access to download URL after upload.
+            storageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+            }
+        }
+        
+        //let fileUrl = URL(fileURLWithPath: file_path)
+        ref = db.collection("users").addDocument(data: [
+            "filename": fileName,
+            "dataname": dataName,
+            "filepath": file_path,
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+        }
+    }
     
     private func disactiveRecorder()
     {
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         tag_file_name = "voice_tag_"+getNowDateString()+".wav"
-        filePath = documentPath + "/"+tag_file_name
-        let url = URL(fileURLWithPath: filePath)
+        file_path = documentPath + "/"+tag_file_name
+        let url = URL(fileURLWithPath: file_path)
         print(url as Any)
         
         // 録音の詳細設定
@@ -74,8 +127,8 @@ class VoiceTagViewController: BaseViewController {
         // 録音ファイルを指定する
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         tag_file_name = "voice_tag_"+getNowDateString()+".wav"
-        filePath = documentPath + "/"+tag_file_name
-        let url = URL(fileURLWithPath: filePath)
+        file_path = documentPath + "/"+tag_file_name
+        let url = URL(fileURLWithPath: file_path)
         
         // 再生と録音の機能をアクティブにする
         let session = AVAudioSession.sharedInstance()
@@ -209,9 +262,9 @@ class VoiceTagViewController: BaseViewController {
             let fileManager = FileManager.default
             
             // Check if file exists
-            if fileManager.fileExists(atPath: self.filePath) {
+            if fileManager.fileExists(atPath: self.file_path) {
                 // Delete file
-                try fileManager.removeItem(atPath: filePath)
+                try fileManager.removeItem(atPath: file_path)
             } else {
                 print("File does not exist")
             }
@@ -223,11 +276,13 @@ class VoiceTagViewController: BaseViewController {
     
     private func post()
     {
+        let data_name = getNowMonthDayString()
         let file_name = temp_data.Get()
         print()
-        database.CreateData(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [tag_file_name], createDate: Date())
+        database.CreateData(file_name, dataName: data_name, userId: 1, tags:[""], voiceTags: [tag_file_name], createDate: Date())
         database.Add()
         temp_data.Clean()
+        self.addDataToFirebase(fileName: file_name, dataName: data_name)
     }
     
 }
