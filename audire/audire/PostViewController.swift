@@ -11,6 +11,7 @@ import AVFoundation
 import Foundation
 import AudioUnit
 import AudioToolbox
+import Firebase
 
 class PostViewController: BaseViewController {
     @IBOutlet weak var Editbutton: UIButton!
@@ -41,8 +42,62 @@ class PostViewController: BaseViewController {
     //読み込みfile関係
     var isEffected=false
     
+    //firebase
+    var db: Firestore!
+    //let collection = Firestore.firestore().collection("restaurants")
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // [START setup]
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        // [END setup]
+    }
+
+    private func addDataToFirebase(fileName: String, dataName: String) {
+        // [START add_ada_lovelace]
+        // Add a new document with a generated ID
+        var ref: DocumentReference? = nil
+
+        // Get a reference to the storage service using the default Firebase App
+        let storage = Storage.storage()
+        // Create a storage reference from our storage service
+        let storageRef = storage.reference()
+        // File located on disk
+        let localFile = URL(string: "file://"+file_path)!
+        // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("audios/"+fileName)
+        
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            // You can also access to download URL after upload.
+            storageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+            }
+        }
+        
+        //let fileUrl = URL(fileURLWithPath: file_path)
+        ref = db.collection("users").addDocument(data: [
+            "filename": fileName,
+            "dataname": dataName,
+            "filepath": file_path,
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,10 +173,12 @@ class PostViewController: BaseViewController {
         if(isEffected){
             saveData()
         }
+        let data_name = getNowMonthDayString()
         let file_name = temp_data.Get()
-        database.CreateData(file_name, dataName: getNowMonthDayString(), userId: 1, tags:[""], voiceTags: [""], createDate: Date())
+        database.CreateData(file_name, dataName: data_name, userId: 1, tags:[""], voiceTags: [""], createDate: Date())
         database.Add()
         temp_data.Clean()
+        self.addDataToFirebase(fileName: file_name, dataName: data_name)
     }
 
     func saveData()
@@ -168,9 +225,12 @@ class PostViewController: BaseViewController {
             generator.impactOccurred()
             print("on haptic!")
         }
-        
+
         //再生停止
         self.player.stop()
+        //投稿
+
+
         //self.showPostAlert()
         self.voiceTagAlert()
     }

@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import RealmSwift
-
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // [START default_firestore]
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        // [END default_firestore]
+        print(db) // silence warning
         let seedFilePath = Bundle.main.path(forResource: "Places", ofType: "realm")
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let documentDir: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
