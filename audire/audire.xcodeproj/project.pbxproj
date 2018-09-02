@@ -45,6 +45,9 @@
 		E6204342213190F000C46468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6204341213190EF00C46468 /* GoogleService-Info.plist */; };
 		E6204343213190F000C46468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6204341213190EF00C46468 /* GoogleService-Info.plist */; };
 		E6204344213190F000C46468 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6204341213190EF00C46468 /* GoogleService-Info.plist */; };
+		E639830D213BD48E0056972C /* sign.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E639830C213BD48D0056972C /* sign.m4a */; };
+		E639830E213BD48E0056972C /* sign.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E639830C213BD48D0056972C /* sign.m4a */; };
+		E639830F213BD48E0056972C /* sign.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E639830C213BD48D0056972C /* sign.m4a */; };
 		E6566DB92131BE6F0015537C /* WebFeedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6566DB82131BE6F0015537C /* WebFeedElement.swift */; };
 		E6566DBA2131BE6F0015537C /* WebFeedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6566DB82131BE6F0015537C /* WebFeedElement.swift */; };
 		E6566DBB2131BE6F0015537C /* WebFeedElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6566DB82131BE6F0015537C /* WebFeedElement.swift */; };
@@ -106,6 +109,7 @@
 		E6069C831F9A4C3700908DE6 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E61543961F474E7C007537DA /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		E6204341213190EF00C46468 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E639830C213BD48D0056972C /* sign.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sign.m4a; sourceTree = "<group>"; };
 		E6566DB82131BE6F0015537C /* WebFeedElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFeedElement.swift; sourceTree = "<group>"; };
 		EDD368B03B8990B17A298254 /* Pods-audire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.release.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.release.xcconfig"; sourceTree = "<group>"; };
 		FDC3FB892F9342E81ED957B7 /* Pods-audire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-audire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-audire/Pods-audire.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		0C978E1C1F37661F003E2232 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E639830C213BD48D0056972C /* sign.m4a */,
 				0CA198951F495E0B00E9525A /* washroom.wav */,
 				0CA198891F48A98400E9525A /* akihabara_lunch.m4a */,
 				0C978E1D1F377269003E2232 /* yurakucho_muzhirusi.m4a */,
@@ -405,6 +410,7 @@
 				0C3928A61F23727300397EDD /* LaunchScreen.storyboard in Resources */,
 				0CA198901F48AEA000E9525A /* ginza_east.m4a in Resources */,
 				0CF2EB681F35E304003DD9D2 /* sight_on_splash.png in Resources */,
+				E639830D213BD48E0056972C /* sign.m4a in Resources */,
 				0C57DDC91FAE5EDD00C4A7FA /* Places.realm in Resources */,
 				0CA198961F495E0B00E9525A /* washroom.wav in Resources */,
 				0CF2EB6B1F35E391003DD9D2 /* sight_on_icon_dark_mat.png in Resources */,
@@ -425,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E615439A1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */,
+				E639830E213BD48E0056972C /* sign.m4a in Resources */,
 				E6204343213190F000C46468 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E615439B1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */,
+				E639830F213BD48E0056972C /* sign.m4a in Resources */,
 				E6204344213190F000C46468 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

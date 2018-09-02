@@ -11,11 +11,13 @@ struct WebFeedElement {
     var user: String
     var showText: String
     var dataPath: String
+    var fileName: String
     var dictionary: [String: Any] {
         return [
             "user": user,
             "showText": showText,
             "dataPath": dataPath,
+            "filename": fileName,
         ]
     }
 }
@@ -28,12 +30,14 @@ extension WebFeedElement {
             user = value as! String
         }
         guard let showText = dictionary["dataname"] as? String,
-            let dataPath = dictionary["filepath"] as? String
+            let dataPath = dictionary["filepath"] as? String,
+            let fileName = dictionary["filename"] as? String
             else { return nil }
         
         self.init(user: user,
                   showText: showText,
-                  dataPath:dataPath)
+                  dataPath:dataPath,
+                  fileName:fileName)
     }
     
 }

@@ -36,6 +36,9 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
     }
     private var listener: ListenerRegistration?
+    var player = AVAudioPlayer()
+    var beepplayer: AVAudioPlayer?
+    
     
     fileprivate func observeQuery() {
         guard let query = query else { return }
@@ -95,6 +98,17 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         tableView.addSubview(refreshControl)
         
         query = baseQuery()
+        
+
+        do {
+            if let fileURL = Bundle.main.path(forResource: "sign", ofType: "m4a") {
+                self.beepplayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
     }
     
     //画面に来る度，毎回呼び出される
@@ -170,23 +184,44 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         //TODO get url and wav file from firebase, play them
-        var seleted_url: URL
+        //database
+        // Get a reference to the storage service using the default Firebase App
+        let storageRef = Storage.storage().reference()
+        var loadurl=feedelements[indexPath.row].fileName;
+        // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("audios/"+loadurl)
+        print(riversRef)
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        riversRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("data load fail \(error.localizedDescription)")
+            } else {
+                // Data for "images/island.jpg" is returned
+                print("loading data succeed.")
+                do {
+                    self.player = try AVAudioPlayer(data: data!)
+                    self.player.prepareToPlay()
+                    self.beepplayer?.play()
+                    self.player.play()
+                } catch {
+                    NSLog("cannot play audio")
+                }
+            }
+        }
+/*        var seleted_url: URL
         if(sounds[indexPath.row].is_test_data)
         {
             let path = sounds[indexPath.row].file_path
-            print("test_data")
             seleted_url = URL(fileURLWithPath: Bundle.main.path(forResource: path.components(separatedBy: ".")[0], ofType: path.components(separatedBy: ".")[1])!)
         }
         else
         {
-            print("my_data")
             seleted_url = URL(fileURLWithPath: documentPath + "/" + sounds[indexPath.row].file_path)
         }
         let cell = tableView.cellForRow(at: indexPath) as! FeedListItemTableViewCell
         let voice_tag_url = URL(fileURLWithPath: documentPath + "/" + sounds[indexPath.row].voice_tags[0].tagFilePath)
 
-        print("select_sound: " , seleted_url as Any)
-        print("select_voice_tag: " , voice_tag_url as Any)
         
         if (soundPlayer.GetSoundURL() == seleted_url)
         {
@@ -234,6 +269,7 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 soundPlayer.Play(url: seleted_url)
             }
         }
+ */
         // 選択を常に解除しておく(解除しないほうが状態がわかりそう)
         tableView.deselectRow(at: indexPath, animated: true)
     }
