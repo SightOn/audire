@@ -441,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E615439B1F474E7C007537DA /* AcousticModelEnglish.bundle in Resources */,
+
 				E639830F213BD48E0056972C /* sign.m4a in Resources */,
 				E6204344213190F000C46468 /* GoogleService-Info.plist in Resources */,
 			);
