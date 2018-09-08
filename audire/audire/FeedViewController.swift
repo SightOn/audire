@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import RealmSwift
-
+import Firebase
 class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SoundPlayerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -25,6 +25,63 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     
+    //firestorage
+    private var feedelements: [WebFeedElement] = []
+    fileprivate var query: Query? {
+        didSet {
+            if let listener = listener {
+                listener.remove()
+                observeQuery()
+            }
+        }
+    }
+    private var listener: ListenerRegistration?
+    var player = AVAudioPlayer()
+    var beepplayer: AVAudioPlayer?
+    
+    
+    fileprivate func observeQuery() {
+        guard let query = query else { return }
+        stopObserving()
+        
+        // Display data from Firestore, part one
+        listener = query.addSnapshotListener { [unowned self] (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error fetching snapshot results: \(error!)")
+                return
+            }
+            let models = snapshot.documents.map { (document) -> WebFeedElement in
+                if let model = WebFeedElement(dictionary: document.data()) {
+                    return model
+                } else {
+                    // Don't use fatalError here in a real app.
+                    fatalError("Unable to initialize type \(WebFeedElement.self) with dictionary \(document.data())")
+                }
+                
+            }
+            
+            self.feedelements = models
+            /*self.documents = snapshot.documents
+            
+            if self.documents.count > 0 {
+                self.tableView.backgroundView = nil
+            } else {
+                self.tableView.backgroundView = self.backgroundView
+            }
+             */
+            print(snapshot.documents)
+            self.tableView.reloadData()
+        }
+        
+    }
+    fileprivate func stopObserving() {
+        listener?.remove()
+    }
+    
+    fileprivate func baseQuery() -> Query {
+        return Firestore.firestore().collection("users").limit(to: 50)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,12 +96,27 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                                  action: #selector(FeedViewController.onRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)
+        
+        query = baseQuery()
+        
+
+        do {
+            if let fileURL = Bundle.main.path(forResource: "sign", ofType: "m4a") {
+                self.beepplayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
     }
     
     //画面に来る度，毎回呼び出される
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        observeQuery()
+
         realm = try! Realm()
         
         //データの読み出し，更新
@@ -77,13 +149,7 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //読み込み済みデータ数を返すべき
-        if section == 0
-        {
-            return limitedCellCount
-        }
-        //通常はここに到達しない
-        return 0
+        return feedelements.count
     }
     
     internal func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -92,13 +158,13 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         _ = maximumOffset - currentOffsetY
         if scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
             //print("一番下に到達した時の処理")
-            if(sounds.count >= limitedCellCount + 5)
+            if(feedelements.count >= limitedCellCount + 5)
             {
-                limitedCellCount = sounds.count + 5
+                limitedCellCount = feedelements.count + 5
             }
             else
             {
-                limitedCellCount = sounds.count
+                limitedCellCount = feedelements.count
             }
             tableView.reloadData()
         }
@@ -106,10 +172,9 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     //セルのデータの読み出し
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListItem") as! FeedListItemTableViewCell
-            cell.titleLabel.text = sounds[indexPath.row].sound_name
+            cell.titleLabel.text = feedelements[indexPath.row].showText;//sounds[indexPath.row].sound_name
             return cell
         }
         return UITableViewCell()
@@ -118,23 +183,45 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     //あるセルを押したら再生
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        var seleted_url: URL
+        //TODO get url and wav file from firebase, play them
+        //database
+        // Get a reference to the storage service using the default Firebase App
+        let storageRef = Storage.storage().reference()
+        var loadurl=feedelements[indexPath.row].fileName;
+        // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("audios/"+loadurl)
+        print(riversRef)
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        riversRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("data load fail \(error.localizedDescription)")
+            } else {
+                // Data for "images/island.jpg" is returned
+                print("loading data succeed.")
+                do {
+                    self.player = try AVAudioPlayer(data: data!)
+                    self.player.prepareToPlay()
+                    self.beepplayer?.play()
+                    self.player.play()
+                } catch {
+                    NSLog("cannot play audio")
+                }
+            }
+        }
+/*        var seleted_url: URL
         if(sounds[indexPath.row].is_test_data)
         {
             let path = sounds[indexPath.row].file_path
-            print("test_data")
             seleted_url = URL(fileURLWithPath: Bundle.main.path(forResource: path.components(separatedBy: ".")[0], ofType: path.components(separatedBy: ".")[1])!)
         }
         else
         {
-            print("my_data")
             seleted_url = URL(fileURLWithPath: documentPath + "/" + sounds[indexPath.row].file_path)
         }
         let cell = tableView.cellForRow(at: indexPath) as! FeedListItemTableViewCell
         let voice_tag_url = URL(fileURLWithPath: documentPath + "/" + sounds[indexPath.row].voice_tags[0].tagFilePath)
 
-        print("select_sound: " , seleted_url as Any)
-        print("select_voice_tag: " , voice_tag_url as Any)
         
         if (soundPlayer.GetSoundURL() == seleted_url)
         {
@@ -182,6 +269,7 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 soundPlayer.Play(url: seleted_url)
             }
         }
+ */
         // 選択を常に解除しておく(解除しないほうが状態がわかりそう)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -230,4 +318,6 @@ class FeedViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
         tableView.reloadData()
     }
+
 }
+
